@@ -14,7 +14,7 @@ import java.util.*;
 @RequiredArgsConstructor
 public class MistralService {
     private static final String MISTRAL_API_URL = "https://openrouter.ai/api/v1/chat/completions";
-    private static final String API_KEY = "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";
+    private static final String API_KEY = "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";
     private static final String PDF_PATH = "src/main/resources/programme.pdf"; // Mettez le bon chemin
 
     private final RestTemplate restTemplate = new RestTemplate();
