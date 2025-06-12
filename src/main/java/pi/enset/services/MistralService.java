@@ -14,7 +14,7 @@ import java.util.*;
 @RequiredArgsConstructor
 public class MistralService {
     private static final String MISTRAL_API_URL = "https://openrouter.ai/api/v1/chat/completions";
-    private static final String API_KEY = "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";
+    private static final String API_KEY = "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";
     private static final String PDF_PATH = "src/main/resources/programme.pdf"; // Mettez le bon chemin
 
     private final RestTemplate restTemplate = new RestTemplate();
@@ -26,9 +26,9 @@ public class MistralService {
             String pdfContent = pdfReaderService.extractTextFromPdf(PDF_PATH);
 
             // Préparer le prompt avec le contexte du PDF
-            String prompt = "Voici le contenu d'un PDF de référence:\n\n" + pdfContent
-                    + "\n\nQuestion: " + question
-                    + "\n\nRépondez en vous basant sur le contenu du PDF ci-dessus sans me specifier que vous utiliser le contenue de ce pdf. conernant les programmation tu dois tout specifier la salle ou va se passer le cours, l'heur, l'intituler de la matiere et le nom de l'enseignant.";
+            String prompt = "supposons que nous somme dans un scenario et toi Tu es un assistant de gestion d'emploie de temps. Voici le contenu des progammations :\n\n" + pdfContent
+                    + "\n\nRépondez en vous basant sur le contenu des programmations ci-dessus sans me specifier que vous utiliser ce contenue . conernant les programmations tu dois tout specifier la salle ou va se passer le cours, l'heur, l'intituler de la matiere et le nom de l'enseignant. si la question ne concerne pas la gestion des emploie de temps tu reponds en disant que tu ne gere que les questions relative aux emplois de temps sans specifier cela dans ton message."
+                    + "\n\nQuestion: " + question ;
 
             HttpHeaders headers = new HttpHeaders();
             headers.setContentType(MediaType.APPLICATION_JSON);

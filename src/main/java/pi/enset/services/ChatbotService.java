@@ -20,7 +20,7 @@ public class ChatbotService {
         question = question.toLowerCase();
 
         if (question.contains("bonjour") || question.contains("salut")) {
-            return "Bonjour ! Je suis votre assistant pour l'emploi de temps. Posez-moi une question comme : \"Quel est mon emploi de temps aujourd'hui ?\"";
+            return "Bonjour ! Je suis votre assistant pour l'emploi de temps. Posez-moi une question comme par exemple : \"ma filier est informatique 1. Quel est mon emploi de temps ?\" ";
         }
 
         if (question.contains("emploi du temps") || question.contains("planning")) {
